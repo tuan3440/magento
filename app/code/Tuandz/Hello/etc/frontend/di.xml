@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+  <type name="Tuandz\Hello\Block\Page\Index" >
+      <plugin name="tuandz_hello_header" type="Tuandz\Hello\Plugin\Block\Page\Header" sortOrder="10">
+
+      </plugin>
+  </type>
+
+    <type name="Magento\Checkout\Model\Cart" >
+        <plugin name="Tuandz_Cart" type="Tuandz\Hello\Plugin\Model\Cart" sortOrder="12">
+
+        </plugin>
+    </type>
+</config>

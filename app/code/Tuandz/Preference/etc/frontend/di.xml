@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--     <preference for="Tuandz\Preference\Model\PersonInterface" type="Tuandz\Preference\Model\Woman" />-->
+    <type name="Tuandz\Preference\Block\Person">
+        <arguments>
+            <argument name="person" xsi:type="object">
+                Tuandz\Preference\Model\Man
+            </argument>
+        </arguments>
+    </type>
+</config>
