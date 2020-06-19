@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OpenTechiz_Blog::blog_content" translate="title" title="OpenTechiz Blog" module="OpenTechiz_Blog"
+             sortOrder="50"
+             parent="Magento_Backend::content" resource="OpenTechiz_Blog::blog_content"/>
+        <add id="OpenTechiz_Blog::post" title="Posts" translate="title" module="OpenTechiz_Blog" sortOrder="10"
+             parent="OpenTechiz_Blog::blog_content" action="blog/post" resource="OpenTechiz_Blog::post"/>
+        <add id="OpenTechiz_Blog::save" title="Save Blog Post" translate="title" module="OpenTechiz_Blog" sortOrder="9"
+             parent="OpenTechiz_Blog::post" action="blog/save" resource="OpenTechiz_Blog::save"/>
+        <add id="OpenTechiz_Blog::delete" title="Delete Blog Post" translate="title" module="OpenTechiz_Blog" sortOrder="8"
+             parent="OpenTechiz_Blog::post" action="blog/delete" resource="OpenTechiz_Blog::delete"/>
+
+    </menu>
+</config>
