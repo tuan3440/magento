@@ -12,7 +12,6 @@ class PostView extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \OpenTechiz\Blog\Model\ResourceModel\Post\CollectionFactory $postCollectionFactory
-
     )
     {
         $this->_postCollectionFactory = $postCollectionFactory;
@@ -28,7 +27,6 @@ class PostView extends \Magento\Framework\View\Element\Template
     {
         $data = $this->_request->getParams();
         $id = $data['id'];
-
         $post = $this->_postCollectionFactory->create();
         $post->addFieldToFilter('post_id', $id);
         return $post;

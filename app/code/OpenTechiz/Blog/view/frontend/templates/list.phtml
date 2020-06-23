@@ -3,7 +3,9 @@
 ?>
 <h1><?= __('Latest Blog Posts') ?></h1>
 <ul class="blog-post-list">
-    <?php /** @var \OpenTechiz\Blog\Model\Post $post */ ?>
+
+
+
     <?php foreach ($block->getPosts() as $post) : ?>
         <li class="blog-post-list-item">
             <h3 class="blog-post-item-title">
