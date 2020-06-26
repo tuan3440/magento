@@ -1,0 +1,27 @@
+<?php
+/** @var \OpenTechiz\BLog\Block\SaveComment $block */
+$form_url = $block->getFormAction();
+?>
+
+<form action="" method="post" id="comment-form">
+    <input type="hidden" name="post_id" value="<?= $block->getPostId(); ?>">
+    <input type="text" name='comment' required placeholder='Add Comment'>
+    <br>
+    <br>
+    <input type="submit" class="submit" name='submit' value='Submit'>
+</form>
+<div class="note"></div>
+
+<script type="text/x-magento-init">
+    {
+        "*" : {
+                "OpenTechiz_Blog/js/commentajax":{
+                    "AjaxCommentPostUrl": "<?php echo $form_url; ?>",
+                    "AjaxPostId": "<?php echo $block->getPostId() ?>",
+                    "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>"
+
+                }
+              }
+    }
+
+</script>

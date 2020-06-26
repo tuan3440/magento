@@ -1,27 +1,23 @@
 <?php
 
-
 namespace OpenTechiz\Blog\Block;
-use OpenTechiz\Blog\Model\ResourceModel\Post\Collection as PostCollection;
+
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
 use OpenTechiz\Blog\Api\Data\PostInterface;
-class Display extends \Magento\Framework\View\Element\Template
+use OpenTechiz\Blog\Model\ResourceModel\Post\Collection as PostCollection;
+
+class PostList extends Template
 {
-//    protected $_postFactory;
     protected $_postCollectionFactory;
 
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \OpenTechiz\Blog\Model\ResourceModel\Post\CollectionFactory $postCollectionFactory
-
-    )
+        Context $context,
+        \OpenTechiz\Blog\Model\ResourceModel\Post\CollectionFactory $postCollectionFactory,
+        array $data = [])
     {
+        parent::__construct($context, $data);
         $this->_postCollectionFactory = $postCollectionFactory;
-        parent::__construct($context);
-    }
-
-    public function sayHello()
-    {
-        return __('Hello World');
     }
 
     public function getPosts()
@@ -39,12 +35,13 @@ class Display extends \Magento\Framework\View\Element\Template
         return $this->getData('posts');
     }
 
-//    public function getPostCollection(){
-//        $post = $this->_postFactory->create();
-//        return $post->getCollection();
-//
-//
-//
-//    }
+    public function getIdentities()
+    {
+        $identities = [];
+        $posts = $this->getPosts();
+        foreach ($posts as $post) {
+            $identities = array_merge($identities, $post->getIdentities());
+        }
+        return $identities;
+    }
 }
-

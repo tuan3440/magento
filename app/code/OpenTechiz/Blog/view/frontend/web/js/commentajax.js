@@ -1,9 +1,9 @@
 define([
     "jquery",
     "jquery/ui",
-    "loadcomment",
-    "loadnotification"
-], function ($, ui, loadcomment, notification) {
+    "loadcomment"
+
+], function ($, ui, loadcomment) {
     "use strict";
 
     function main(config, element) {
@@ -16,6 +16,7 @@ define([
         dataForm.mage('validation', {});
 
         $(document).on('click', '.submit', function () {
+
             if (dataForm.valid()) {
                 event.preventDefault();
                 var param = dataForm.serialize();
@@ -25,6 +26,7 @@ define([
                     data: param,
                     type: "POST"
                 }).done(function (data) {
+                    console.log(data);
                     if (data.result == 'error') {
                         $('.note').html(data.message);
                         $('.note').css('color', 'red');

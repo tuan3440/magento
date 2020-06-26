@@ -6,7 +6,5 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Tuandz_CreateTable', __DIR__);
-
-
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'OpenTechiz_Table', __DIR__);
 

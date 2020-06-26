@@ -9,5 +9,9 @@
         <add id="OpenTechiz_Blog::post" title="Posts" translate="title" module="OpenTechiz_Blog" sortOrder="10"
              parent="OpenTechiz_Blog::blog_content" action="blog/post" resource="OpenTechiz_Blog::post"/>
 
+        <add id="OpenTechiz_Blog::comment_post" title="Comment" translate="title" module="OpenTechiz_Blog"
+             sortOrder="20"
+             parent="OpenTechiz_Blog::blog_content" action="blog/comment" resource="OpenTechiz_Blog::comment"/>
+
     </menu>
 </config>

@@ -40,4 +40,3 @@ class PostView extends \Magento\Framework\View\Element\Template
 //
 //    }
 }
-

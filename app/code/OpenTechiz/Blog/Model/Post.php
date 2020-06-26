@@ -11,7 +11,7 @@ class Post extends AbstractModel implements PostInterface, IdentityInterface
     const STATUS_ENABLED = 1;
     const STATUS_DISABLED = 0;
 
-
+    const CACHE_POST_COMMENT_TAG = "opentechiz_blog_post_comment";
 
     /**
      * CMS page cache tag.

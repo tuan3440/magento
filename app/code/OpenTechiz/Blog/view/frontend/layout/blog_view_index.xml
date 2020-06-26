@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
-
-
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="OpenTechiz\Blog\Block\PostView" name="blog_view_index" template="OpenTechiz_Blog::view.phtml"/>
+            <block class="OpenTechiz\Blog\Block\PostView" name="post.content" template="OpenTechiz_Blog::view.phtml"/>
+            <block class="OpenTechiz\Blog\Block\CommentList" name="post.comment"
+                   template="OpenTechiz_Blog::comment_list.phtml"/>
+            <block class="OpenTechiz\Blog\Block\SaveComment" name="add.comment"
+                   template="OpenTechiz_Blog::comment_form.phtml"/>
         </referenceContainer>
     </body>
 </page>

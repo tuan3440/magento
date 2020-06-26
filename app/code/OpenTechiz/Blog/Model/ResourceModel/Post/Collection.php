@@ -1,11 +1,15 @@
 <?php
+
 namespace OpenTechiz\Blog\Model\ResourceModel\Post;
 
-class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+
+class Collection extends AbstractCollection
 {
+    /**
+     * @var string
+     */
     protected $_idFieldName = 'post_id';
-    protected $_eventPrefix = 'opentechiz_blog_post_collection';
-    protected $_eventObject = 'post_collection';
 
     /**
      * Define resource model
@@ -16,5 +20,4 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $this->_init('OpenTechiz\Blog\Model\Post', 'OpenTechiz\Blog\Model\ResourceModel\Post');
     }
-
 }
