@@ -1,0 +1,23 @@
+<h3>NOTIFICATIONS BY CUSTOMER</h3>
+<div class="authentication-wrapper" data-block="authentication" data-role="notifications" data-bind="scope: 'loadNotifications'" style="margin-top: 0px !important; width:100px !important;">
+    <ul class="dropdown" id="notification-content" style="overflow-y: scroll; height:400px; padding: 5px;" data-bind="foreach: loadNotifications().items">
+        <li class="dropdown-item">
+            <span data-bind="text: content"></span>
+            <br><small data-bind="text: created_at"></small>
+        </li>
+    </ul>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                    "components": {
+                        "loadNotifications": {
+                            "component": "OpenTechiz_Blog/js/view/loadnotifications"
+                        }
+                }
+            }
+        }
+    }
+</script>
