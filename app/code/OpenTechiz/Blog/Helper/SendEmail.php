@@ -36,6 +36,7 @@ class SendEmail extends AbstractHelper
         $postObject->setData($data);
         $senderEmail = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
         $senderName = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);
+
         $sender = [
             'name' => $senderName,
             'email' => $senderEmail

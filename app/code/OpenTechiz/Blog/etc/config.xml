@@ -1,14 +1,15 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <rsgitech_news>
+        <blog>
             <general>
-                <enable>1</enable>
+                <template>blog_comment_notification_email_template</template>
             </general>
-            <storefront>
-                <news_link>Latest News</news_link>
-                <set_limit>10</set_limit>
-            </storefront>
-        </rsgitech_news>
+            <reminder>
+                <template>comment_approval_reminder_email_template</template>
+            </reminder>
+        </blog>
     </default>
 </config>

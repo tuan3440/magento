@@ -153,6 +153,7 @@ class Save extends Action
             $userInfo = $this->_customerSession->getCustomerData();
             $name = $userInfo->getFirstName() . " " . $userInfo->getLastName();
             $email = $userInfo->getEmail();
+
             //  echo 'success';
             $jsonResultResponse->setData([
                 'result' => 'success',
@@ -160,7 +161,7 @@ class Save extends Action
             ]);
             // send email to user
 //            echo "email + name " . $email . $name;die;
-//            $this->_sendEmail->approvalEmail($email, $name);
+            $this->_sendEmail->approvalEmail($email, $name);
         } else {
             $jsonResultResponse->setData([
                 'result' => 'error',
