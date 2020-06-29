@@ -82,7 +82,7 @@ class MassApproval implements ObserverInterface
             $postTitle = $post->getTitle();
 
             $noti = $this->_notiFactory->create();
-            $content = "Your comment ID: $comment_id at Post: $postTitle has been approved enable by Admin";
+            $content = "Your comment ID: $comment_id at Post: $postTitle has been not approved enable by Admin";
             $noti->setContent($content);
             $noti->setCustomerID($user_id);
             $noti->setCommentID($comment_id);

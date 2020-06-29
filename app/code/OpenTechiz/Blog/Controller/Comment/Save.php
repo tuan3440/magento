@@ -143,10 +143,10 @@ class Save extends Action
                 "is_active" => 2
             ]);
 
-//            $this->_eventManager->dispatch(
-//                'blog_comment_prepare_save',
-//                ['comment' => $model, 'request' => $this->getRequest()]
-//            );
+            $this->_eventManager->dispatch(
+                'blog_comment_prepare_save',
+                ['comment' => $model, 'request' => $this->getRequest()]
+            );
 
             $model->save();
 
