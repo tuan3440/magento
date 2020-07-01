@@ -25,8 +25,7 @@ class Save extends Action
     public function __construct(
         \OpenTechiz\Blog\Model\PostFactory $postFactory,
         Action\Context $context
-    )
-    {
+    ) {
         $this->_postFactory = $postFactory;
         parent::__construct($context);
     }
@@ -40,20 +39,36 @@ class Save extends Action
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
+
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
+        $model = $this->_postFactory->create();
         if ($data) {
             /** @var \OpenTechiz\Blog\Model\Post $model */
-            $model = $this->_postFactory->create();
 
-            $model->setTitle($data['title']);
-            $model->setContent($data['content']);
-            $model->setUrlKey($data['url_key']);
-            $model->setIsActive($data['is_active']);
-            //event
+
+
+
 
             try {
-                $model->save();
+                if(!$data['post_id']) {
+                    $model = $this->_postFactory->create();
+
+                    $model->setTitle($data['title']);
+                    $model->setContent($data['content']);
+                    $model->setUrlKey($data['url_key']);
+                    $model->setIsActive($data['is_active']);
+                    $model->save();
+                }
+                else {
+                    $model = $this->_postFactory->create();
+                    $model->load($data['post_id']);
+                    $model->setTitle($data['title']);
+                    $model->setContent($data['content']);
+                    $model->setUrlKey($data['url_key']);
+                    $model->setIsActive($data['is_active']);
+                    $model->save();
+                }
                 $this->messageManager->addSuccess(__('You saved this Post.'));
                 if ($this->getRequest()->getParam('back')) {
                     return $resultRedirect->setPath('*/*/edit', ['post_id' => $model->getID(), '_current' => true]);

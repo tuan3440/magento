@@ -66,6 +66,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
                                         true,
                                         [
                                             'back' => 'duplicate'
+
                                         ]
                                     ]
                                 ]

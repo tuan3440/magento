@@ -20,6 +20,7 @@ class Delete extends \Magento\Backend\App\Action
     {
         // check if we know what should be deleted
         $id = $this->getRequest()->getParam('post_id');
+
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
 

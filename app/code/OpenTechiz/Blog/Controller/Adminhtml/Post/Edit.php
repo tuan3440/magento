@@ -34,10 +34,12 @@ class Edit extends Action
         Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Registry $registry
+
     )
     {
         $this->resultPageFactory = $resultPageFactory;
         $this->_coreRegistry = $registry;
+
         parent::__construct($context);
     }
 
