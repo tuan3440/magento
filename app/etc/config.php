@@ -263,6 +263,7 @@ return [
         'Mageplaza_Smtp' => 0,
         'OpenTechiz_Blog' => 1,
         'OpenTechiz_Table' => 1,
+        'Rsgitech_Customer' => 1,
         'Rsgitech_News' => 0,
         'Techone_Ajaxtutorial' => 0,
         'Temando_Shipping' => 1,
