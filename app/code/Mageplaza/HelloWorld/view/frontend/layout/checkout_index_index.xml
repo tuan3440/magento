@@ -19,6 +19,23 @@
                                                 <!--add here child component declaration for your step-->
                                             </item>
                                         </item>
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="before-form" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="newsletter" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Mageplaza_HelloWorld/js/view/newsletter</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+
+
                                     </item>
                                 </item>
                             </item>

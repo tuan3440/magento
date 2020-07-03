@@ -273,8 +273,9 @@ return [
         'Tuandz_HelloWorld' => 1,
         'Tuandz_Menu' => 1,
         'Tuandz_Preference' => 1,
-        'Tuandz_UI' => 1,
+        'Tuandz_UI' => 0,
         'Tuandz_UiExample' => 1,
+        'Vendor_CustomShipping' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidation' => 1,
         'Yotpo_Yotpo' => 1
