@@ -42,7 +42,7 @@ class MassDisable extends \Magento\Backend\App\Action
     public function execute()
     {
         $collection = $this->filter->getCollection($this->collectionFactory->create());
-        foreach ($collection as $item) {
+        foreach ($collection->getItems() as $item) {
             $item->setIsActive(false);
             $item->save();
         }

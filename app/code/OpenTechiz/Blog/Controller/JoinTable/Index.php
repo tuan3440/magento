@@ -7,7 +7,7 @@ namespace OpenTechiz\Blog\Controller\JoinTable;
 class Index extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
-    protected $postFactory;
+    protected $_postFactory;
     protected $_resource;
 
 
@@ -19,20 +19,20 @@ class Index extends \Magento\Framework\App\Action\Action
     )
     {
         $this->_pageFactory = $pageFactory;
-        $this->postFactory = $postFactory;
+        $this->_postFactory = $postFactory;
         $this->_resource = $resource;
         return parent::__construct($context);
     }
 
     public function execute()
     {
-        $collection = $this->postFactory->create()->getCollection();
-        $comment = $this->_resource->getTableName('opentechiz_blog_comment');
+        $textDisplay = new \Magento\Framework\DataObject(array('text' => 'Mageplaza'));
+        $this->_eventManager->dispatch('mageplaza_helloworld_display_text', ['mp_text' => $textDisplay]);
+        echo $textDisplay->getText();
+        exit;
 
-        $collection->getSelect()->join(array('comment' => $comment), 'main_table.post_id = comment.post_id');
 
-        print_r($collection->getSelect());
-        die;
+        return $this->_pageFactory->create();
 
     }
 }

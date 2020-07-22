@@ -51,7 +51,7 @@ class MassDelete extends \Magento\Backend\App\Action
         $collection = $this->filter->getCollection($this->collectionFactory->create());
         $collectionSize = $collection->getSize();
 
-        foreach ($collection as $page) {
+        foreach ($collection->getItems() as $page) {
             $page->delete();
         }
 

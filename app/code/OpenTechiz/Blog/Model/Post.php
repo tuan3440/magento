@@ -206,4 +206,9 @@ class Post extends AbstractModel implements PostInterface, IdentityInterface
         $this->setData(self::IS_ACTIVE, $isActive);
         return $this;
     }
+
+    public function getPost()
+    {
+        return "abc";
+    }
 }

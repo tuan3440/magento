@@ -24,11 +24,13 @@ class Load extends Action
         \Magento\Framework\App\Action\Context $context
     )
     {
+
         $this->_resultFactory = $context->getResultFactory();
         $this->_resultJsonFactory = $resultJsonFactory;
         $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_customerSession = $customerSession;
         parent::__construct($context);
+
     }
 
     public function execute()
@@ -45,7 +47,6 @@ class Load extends Action
             ->create()
             ->addFieldToFilter('post_id', $post_id)
             ->addFieldToFilter('is_active', 1)
-
             ->addOrder(
                 CommentInterface::CREATED_AT,
                 CommentCollection::SORT_ORDER_DESC

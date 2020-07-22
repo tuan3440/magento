@@ -121,9 +121,9 @@ class Save extends Action
             $message = "Your submission is not valid. Please try again!";
         }
 
-        $this->_inlineTranslation->suspend();
-        $postObject = new DataObject();
-        $postObject->setData($postData);
+//        $this->_inlineTranslation->suspend();
+//        $postObject = new DataObject();
+//        $postObject->setData($postData);
 
         if (!$this->_customerSession->isLoggedIn()) {
             $error = true;
@@ -143,16 +143,16 @@ class Save extends Action
                 "is_active" => 2
             ]);
 
-            $this->_eventManager->dispatch(
-                'blog_comment_prepare_save',
-                ['comment' => $model, 'request' => $this->getRequest()]
-            );
+//            $this->_eventManager->dispatch(
+//                'blog_comment_prepare_save',
+//                ['comment' => $model, 'request' => $this->getRequest()]
+//            );
 
             $model->save();
 
-            $userInfo = $this->_customerSession->getCustomerData();
-            $name = $userInfo->getFirstName() . " " . $userInfo->getLastName();
-            $email = $userInfo->getEmail();
+//            $userInfo = $this->_customerSession->getCustomerData();
+//            $name = $userInfo->getFirstName() . " " . $userInfo->getLastName();
+//            $email = $userInfo->getEmail();
 
             //  echo 'success';
             $jsonResultResponse->setData([

@@ -14,6 +14,8 @@ interface PostInterface
 
     public function getId();
 
+    public function getPost();
+
     public function getUrlKey();
 
     public function getTitle();

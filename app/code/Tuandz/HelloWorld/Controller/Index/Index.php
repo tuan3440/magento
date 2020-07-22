@@ -18,14 +18,10 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-//        $post = $this->_postFactory->create();
-//        $collection = $post->getCollection();
-//        foreach($collection as $item){
-//            echo "<pre>";
-//            print_r($item->getData());
-//            echo "</pre>";
-//        }
-//        exit();
+        $textDisplay = new \Magento\Framework\DataObject(array('text' => 'Mageplaza'));
+        $this->_eventManager->dispatch('mageplaza_helloworld_display_text', ['mp_text' => $textDisplay]);
+        echo $textDisplay->getText();
+        exit;
         return $this->_pageFactory->create();
     }
 }

@@ -46,13 +46,9 @@ class Save extends Action
         if ($data) {
             /** @var \OpenTechiz\Blog\Model\Post $model */
 
-
-
-
-
             try {
                 if(!$data['post_id']) {
-                    $model = $this->_postFactory->create();
+//                    $model = $this->_postFactory->create();
 
                     $model->setTitle($data['title']);
                     $model->setContent($data['content']);
@@ -61,7 +57,7 @@ class Save extends Action
                     $model->save();
                 }
                 else {
-                    $model = $this->_postFactory->create();
+//                    $model = $this->_postFactory->create();
                     $model->load($data['post_id']);
                     $model->setTitle($data['title']);
                     $model->setContent($data['content']);
@@ -81,7 +77,7 @@ class Save extends Action
             } catch (\Exception $e) {
                 $this->messageManager->addException($e, __('Something went wrong while saving the post.'));
             }
-            $this->_getSession()->setFormData($data);
+//            $this->_getSession()->setFormData($data);
             return $resultRedirect->setPath('*/*/edit', ['post_id' => $this->getRequest()->getParam('post_id')]);
         }
         return $resultRedirect->setPath('*/*/');

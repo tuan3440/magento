@@ -8,6 +8,7 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
 
+
 class Index extends Action
 {
 
@@ -16,5 +17,6 @@ class Index extends Action
     {
         echo 'index in module hello';
     }
+
 }
 

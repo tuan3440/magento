@@ -64,7 +64,8 @@ class PostActions extends Column
                         'href' => $this->urlBuilder->getUrl($this->editUrl, ['post_id' => $item['post_id']]),
                         'label' => __('Edit')
                     ];
-                    $title = $this->getEscaper()->escapeHtml($item['title']);
+                    $title = $item['title'];
+//                    $title = $this->getEscaper()->escapeHtml($item['title']);
                     $item[$name]['delete'] = [
                         'href' => $this->urlBuilder->getUrl(self::BLOG_URL_PATH_DELETE, ['post_id' => $item['post_id']]),
                         'label' => __('Delete'),
