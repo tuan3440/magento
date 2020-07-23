@@ -27,6 +27,7 @@ class EditTest extends TestCase
     protected $_coreRegisterMock;
     protected $context;
 
+
     protected function setUp()
     {
         $this->requestMock = $this->createMock(RequestInterface::class);
@@ -39,15 +40,27 @@ class EditTest extends TestCase
         $this->resultPageFactoryMock = $this->createMock(PageFactory::class);
         $this->_coreRegisterMock = $this->createMock(Registry::class);
 
+        $this->context = $this->createPartialMock(\Magento\Backend\App\Action\Context::class, [
+            'getRequest',
+            'getMessageManager',
+            'getResultRedirectFactory',
+            'getObjectManager'
+
+        ]);
+
+        $this->context->method('getRequest')->willReturn($this->requestMock);
+        $this->context->method('getMessageManager')->willReturn($this->messageManagerMock);
+        $this->context->method('getObjectManager')->willReturn($this->_objetcManagerMock);
+        $this->context->method('getResultRedirectFactory')->willReturn($this->resultRedirectFactoryMock);
         $objectManagerHelper = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
         $this->controllerEditPost = $objectManagerHelper->getObject(
             \OpenTechiz\Blog\Controller\Adminhtml\Post\Edit::class,
             [
-                'request' => $this->requestMock,
-                'resultRedirectFactory' => $this->resultRedirectFactoryMock,
-                'objectManager' => $this->_objetcManagerMock,
-                'messageManager' => $this->messageManagerMock,
+                'context' => $this->context,
+
+
                 'resultPageFactory' => $this->resultPageFactoryMock,
+
                 'coreRegistry' => $this->_coreRegisterMock
             ]
         );
