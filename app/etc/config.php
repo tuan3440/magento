@@ -259,8 +259,6 @@ return [
         'Klarna_Kp' => 1,
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
-        'Mageplaza_HelloWorld' => 1,
-        'Mageplaza_Smtp' => 0,
         'OpenTechiz_Blog' => 1,
         'OpenTechiz_Table' => 1,
         'Rsgitech_Customer' => 1,

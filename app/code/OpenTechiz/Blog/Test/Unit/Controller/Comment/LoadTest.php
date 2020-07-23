@@ -30,14 +30,21 @@ class LoadTest extends TestCase
      * @var RequestInterface|\PHPUnit_Framework_MockObject_MockObject
      */
     protected $requestMock;
+    protected $context;
 
     protected function setUp()
     {
+        $this->context = $this->createPartialMock(\Magento\Backend\App\Action\Context::class, [
+            'getRequest'
+
+        ]);
+
         $this->requestMock = $this->getMockBuilder(RequestInterface::class)
             ->disableOriginalConstructor()
             ->setMethods(['getPostValue'])
             ->getMockForAbstractClass();
-
+        $this->context->expects($this->any())->method('
+        getRequest')->willReturn($this->requestMock);
         $this->customerSessionMock = $this->createMock(\Magento\Customer\Model\Session::class);
 
         $this->commentCollectionFactoryMock = $this->getMockBuilder(\OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory::class)
@@ -54,7 +61,8 @@ class LoadTest extends TestCase
         $this->controller = $objectManagerHelper->getObject(
             \OpenTechiz\Blog\Controller\Comment\Load::class,
             [
-                'request' => $this->requestMock,
+//                'request' => $this->requestMock,
+                'context' => $this->context,
                 'customerSession' => $this->customerSessionMock,
                 'commentCollectionFactory' => $this->commentCollectionFactoryMock,
                 'resultJsonFactory' => $this->resultJsonFactoryMock

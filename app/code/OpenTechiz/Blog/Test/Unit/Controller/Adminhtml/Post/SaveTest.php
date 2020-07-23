@@ -44,7 +44,6 @@ class SaveTest extends TestCase
             [
                 'request' => $this->requestMock,
                 'resultRedirectFactory' => $this->resultRedirectFactoryMock,
-
                 'messageManager' => $this->messageManagerMock,
                 'postFactory' => $this->postFactoryMock
             ]
